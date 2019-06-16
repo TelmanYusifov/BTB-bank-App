@@ -52,6 +52,8 @@
     <Compile Include="Controls\LoginRegisterControl.Designer.cs">
       <DependentUpon>LoginRegisterControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\DbContext.cs" />
+    <Compile Include="Database\DbSet.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +97,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
