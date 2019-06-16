@@ -9,11 +9,11 @@ namespace BTB_Expense_system.Database
 {
     public class DbContext
     {
-        public DbSet<User> Users { get; set; }
-
-        public DbContext()
+        private static readonly DbSet<User> _users;
+        public DbSet<User> Users { get { return _users; }}
+        static DbContext()
         {
-            Users = new DbSet<User>();
+            _users = new DbSet<User>();
         }
     }
 }

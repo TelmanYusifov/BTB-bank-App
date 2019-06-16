@@ -36,5 +36,9 @@ namespace BTB_Expense_system.Database
         {
             _items.RemoveAt(index);
         }
+        public T Find(Predicate<T> predicate)
+        {
+            return _items.Find(predicate);
+        }
     }
 }
