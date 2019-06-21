@@ -1,4 +1,5 @@
 ﻿using BTB_Expense_system.Database;
+using BTB_Expense_system.Forms;
 using BTB_Expense_system.Models;
 using System;
 using System.Collections.Generic;
@@ -49,9 +50,20 @@ namespace BTB_Expense_system
                     User currentuser = dbContext.Users.Find(x => x.Email == email);
                     if(currentuser == null)
                     {
-
+                        dbContext.Users.Add(user);
+                        MessageBox.Show(user.Email + "successfully registered!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This user already exists! Please Login!");
                     }
                 }
+            }
+            else
+            {
+                DialogForm dialogForm = new DialogForm();
+                dialogForm.FillErrors(vr);
+                dialogForm.ShowDialog();
             }
         }
 
